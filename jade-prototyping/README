@@ -1,0 +1,9 @@
+gem install environment
+gem install zurb-foundation
+gem install compass
+gem install sass
+npm install jade
+
+To run:
+compass watch -c ./config.rb
+jade --watch ./*.jade --out ../public/

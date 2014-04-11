@@ -1,0 +1,282 @@
+doctype
+html
+	head
+		meta(charset='utf-8')
+		meta(name='viewport', content='width=device-width, initial-scale=1.0')
+		title Mobility Procurement
+		link(rel='stylesheet', href='http://cdn.jsdelivr.net/foundation/4.3.2/css/foundation.css')
+
+	body
+		nav.top-bar
+			ul.title-area: li.name: div.row: .large-12.columns: h1(style="color:#fff;") Mobility Procurement
+			section.top-bar-section: ul.right: li: a(style="font-weight:normal;") Welcome example@mobility.com | Sign out
+		p &nbsp;
+
+		.row: .large.12-columns
+			p: a(href="./index.html") Home
+
+			div(class="section-container tabs" data-section="tabs") 
+				section.active
+					p(class="title" data-section-title)
+						a(href="#manage-contracts") Manage Contracts
+					div(class="content" data-section-content)
+						.row
+							.large-12.columns
+								ul.breadcrumbs
+									li.current
+										a.breadcrumb-step-1(href="#") Step 1: Find existing contract or create new one
+									li.unavailable
+										a.breadcrumb-step-2(href="#") Step 2
+									li.unavailable
+										a.breadcrumb-step-3(href="#") Step 3
+
+							br
+						.row
+							div.large-8.columns.large-centered.step-1
+								div(class="section-container accordion" data-section="accordion")
+									
+									section.active
+										p(class="title" data-section-title)
+											a(href="#existing-contract") Existing Contract
+										div(class="content" data-section-content)
+											form
+												div.row
+													div.large-12.columns
+														label Please enter your phone number
+														br
+														input(type="text" placeholder="Phone Number")
+														input(type="button" class="button small cta-existing-contract" value="Next")
+
+									section
+										p(class="title" data-section-title)
+											a(href="#new-contract") New Contract
+										div(class="content" data-section-content)
+											form
+												div.row
+													div.large-12.columns
+														label Please enter new employee information
+														br
+														input(type="text" placeholder="Employee Name")
+														input(type="text" placeholder="Employee Email")
+														input(type="text" placeholder="PO Number")
+														input(type="button" class="button small cta-new-contract" value="Next")
+
+							// view phone history on the next step.
+							div.large-8.columns.large-centered.step-2.hide
+								div.phone-history
+									h5 Phone History
+									table(style="width:100%;")
+										thead
+											tr
+												th Employee
+												th Date Processed
+										tbody
+											tr
+												td Boris
+												td 2014-09-23 17:30:07
+
+								div.alert-box.success This account is eligible for an upgrade.
+
+								// phones
+								div(class="section-container accordion" data-section="accordion")
+									section.active
+										p(class="title" data-section-title)
+											a(href="#existing-contract") Select Device
+										div(class="content" data-section-content)
+											form
+												ul.large-block-grid-2
+													li
+														.row
+															.large-6.small-6.columns
+																img(src="http://static.telus.com/common/images/devices/iphone-5s.png")
+															.large-6.small-6.columns
+																h5= 'iPhone 5S White'
+																h6: strong $229
+																hr: em Accessories
+																label
+																	input("type=checkbox")
+																	span  Carrying Case ($19.19)
+																label
+																	input("type=checkbox")
+																	span  Car Charger ($49.19)
+																a(class="button small" data-reveal-id="orderModal") Order
+													li
+														.row
+															.large-6.small-6.columns
+																img(src="http://static.telus.com/common/images/devices/iphone-5c.png")
+															.large-6.small-6.columns
+																h5= 'iPhone 5S Black'
+																h6: strong $229
+																hr: em Accessories
+																label
+																	input("type=checkbox")
+																	span  Carrying Case ($19.19)
+																label
+																	input("type=checkbox")
+																	span  Car Charger ($49.19)
+																a(class="button small" data-reveal-id="orderModal") Order
+
+													li
+														.row: .large-12.columns: hr
+													li
+														.row: .large-12.columns: hr
+
+													li
+														.row
+															.large-6.small-6.columns
+																img(src="http://static.telus.com/common/images/devices/samsung-galaxy-s4.png")
+															.large-6.small-6.columns
+																h5= 'Samsung Galaxy S4'
+																h6: strong $129
+																hr: em Accessories
+																label
+																	input("type=checkbox")
+																	span  Carrying Case ($19.19)
+																label
+																	input("type=checkbox")
+																	span  Car Charger ($49.19)
+																a(class="button small" data-reveal-id="orderModal") Order
+
+													li
+														.row
+															.large-6.small-6.columns
+																img(src="http://static.telus.com/common/images/devices/large/nexus-5.png")
+															.large-6.small-6.columns
+																h5= 'Nexus 5'
+																h6: strong $500
+																hr: em Accessories
+																label
+																	input("type=checkbox")
+																	span  Carrying Case ($19.19)
+																label
+																	input("type=checkbox")
+																	span  Car Charger ($49.19)
+																a(class="button small" data-reveal-id="orderModal") Order
+														
+
+							// order complete
+							div.large-8.columns.large-centered.step-3.hide
+								div(class="section-container accordion" data-section="accordion")
+									section.active
+										p(class="title" data-section-title)
+											a(href="#order-complete") Order Completed
+											div(class="content" data-section-content) Thank you! <br />Your order has been placed and the phone will be issued once it has been approved. Check the history tab for further details.<br /><br />
+												p: a.button.small(href="./index.html") New Order
+				section
+					p(class="title" data-section-title)
+						a(href="#history") History
+					div(class="content" data-section-content)
+						br
+						dl.sub-nav
+							dt Filter
+								dd.active: a(href="#") Pending
+								dd: a(href="#") Active
+
+						table(style="width:100%")
+							thead
+								tr
+									th Employee Name
+									th Email
+									th Device
+									th Phone Number
+									th Date Processed
+									th Price
+									th Status
+									th Purchase Order
+									th 
+							tbody
+								tr
+									td Gavin Silva
+									td facilisis.non.bibendum@bibendumullamcorper.co.uk
+									td &bull; iPhone 5s White
+									td 
+									td 2013-10-29 17:09:50
+									td $299
+									td New
+									td PO-01855
+									td: | <a href="#" title="Accept" data-reveal-id="activateModal">A</a>&nbsp;&middot;&nbsp;<a href="#" title="Reject">R</a>
+								tr
+									td Hilary Salazar
+									td enim.condimentum@aliquetodioEtiam.org
+									td &bull;iPhone 5s Black<br />&bull;Charger
+									td 1-687-571-9316
+									td 2013-05-10 19:47:19
+									td $299
+									td Upgrade
+									td PO-55678
+									td: | <a href="#" title="Accept" data-reveal-id="activateModal">A</a>&nbsp;&middot;&nbsp;<a href="#" title="Reject">R</a>
+								tr
+									td Kennan Gilbert
+									td luctus.et.ultrices@aultricies.edu
+									td &bull; Nexus 5<br />&bull; Carrying Case
+									td 1-944-807-6712
+									td 2014-09-23 17:30:07
+									td $199
+									td Upgrade
+									td PO-68740
+									td: | <a href="#" title="Accept" data-reveal-id="activateModal">A</a>&nbsp;&middot;&nbsp;<a href="#" title="Reject">R</a>
+
+				section
+					p(class="title" data-section-title)
+						a(href="#devices") Device List
+					div(class="content" data-section-content)
+						div
+							input.button.small(type="button" value="Add New Device")
+							br
+						table(style="width:100%")
+							thead
+								tr
+									th Phone
+									th Photo
+									th Accessories
+									th New Price
+									th Upgrade Price
+									th
+							tbody
+								tr
+									td iPhone 5S Black
+									td: a View
+									td Carrying Case ($19.99)<br />Charger ($49.99) 
+									td $499
+									td $299
+									td: | <a href="#" title="Edit">E</a>&nbsp;&middot;&nbsp;<a href="#" title="Delete">D</a>
+								tr
+									td iPhone 5S White
+									td: a View
+									td Carrying Case ($19.99)<br />Charger ($49.99) 
+									td $499
+									td $299
+									td: | <a href="#" title="Edit">E</a>&nbsp;&middot;&nbsp;<a href="#" title="Delete">D</a>
+								tr
+									td Nexus 5
+									td: a View
+									td Carrying Case ($19.99)<br />Charger ($49.99) 
+									td $299
+									td $199
+									td: | <a href="#" title="Edit">E</a>&nbsp;&middot;&nbsp;<a href="#" title="Delete">D</a>
+
+
+		div.panel.footer(style="padding-top:0.2em;padding-bottom:0.4em;position:fixed;bottom:0;width:100%;margin:0;")
+			small For support contact 
+				a(href="#") support@example.com
+
+		#orderModal.reveal-modal.small.text-center
+			h3 Complete Order?
+			p.lead Your order is ready to go. Click 'Finish' to complete.
+			p: input.button.small.cta-finish-order(value="Finish Order")
+			a.close-reveal-modal &#215;
+
+		#activateModal.reveal-modal.small.text-center
+			h3 Application Completed
+			p.lead This devices is ready to go. This modal comes with ability to enter new phone number.
+			a.close-reveal-modal &#215;
+
+		#rejectModal.reveal-modal.small.text-center
+			h3 Application Rejects
+			p.lead This application has been rejected and email sent.
+			a.close-reveal-modal &#215;
+
+		script(src="js/vendor/jquery.js")
+		script(src="js/vendor/foundation.min.js")
+		script(src="js/vendor/app.js")
+		
